@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Database</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid black;
+            padding: 10px; /* Adds space inside the cells */
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2; /* Adds background color to header */
+        }
+        table {
+            border-spacing: 10px; /* Adds space between cells */
+        }
+    </style>
+</head>
+<body>
+<h3>Database Data</h3>
+<br>
+<table>
+    <tr>
+        <th>Time</th>
+        <th>  Humidity</th>
+        <th>  Temperature</th>
+    </tr>
+    {{range .}}
+    <tr>
+        <td>{{.Time}}</td>
+        <td>  {{.Humidity}}</td>
+        <td>  {{.Temperature}}</td>
+    </tr>
+    {{end}}
+</table>
+
+</body>
+</html>

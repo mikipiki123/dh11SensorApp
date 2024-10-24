@@ -1,0 +1,6 @@
+
+.DS_Store
+serialCommunicationGo/SCI2C
+serialCommunicationGo/SCI2CLinux
+serialCommunicationGo/SCUSB
+SensorServer/go_build_SensorServer

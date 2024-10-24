@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<!--    <meta http-equiv="refresh" content="5">-->
+    <style>
+        .center-div {
+            width: 300px;
+            margin: 0 auto; /* This centers the div horizontally */
+            /*background-color: lightblue;*/
+            padding: 20px;
+        }
+    </style>
+    <script src="
+https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js">
+    </script>
+    <title>Graph</title>
+</head>
+<body>
+<h1>Graph</h1>
+<!-- Prepare a DOM with a defined width and height for ECharts -->
+<div id="main" style="width: 100%;height: 500px;"class="center-div"></div>
+<script type="text/javascript">
+    // Initialize the echarts instance based on the prepared dom
+    var myChart = echarts.init(document.getElementById('main'));
+
+    // Specify the configuration items and data for the chart
+    option = {
+        xAxis: {
+            type: 'category',
+            data: [{{ range .Time }}{{ . }},{{ end }}]
+        },
+        yAxis: {
+            type: 'value'
+        },
+        series: [
+            {
+                data: [{{ range .Humidity }}{{ . }},{{ end }}],
+                type: 'line',
+                smooth: true
+            },
+            {
+                data: [{{ range .Temperature }}{{ . }},{{ end }}],
+                type: 'line',
+                smooth: true
+            },
+        ]
+    };
+
+    // Display the chart using the configuration items and data just specified.
+    myChart.setOption(option);
+</script>
+
+
+</body>
+</html>
