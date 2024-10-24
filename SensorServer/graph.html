@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="refresh" content="6">
+<!--    <meta http-equiv="refresh" content="5">-->
     <style>
         .center-div {
             width: 300px;
@@ -26,6 +26,10 @@ https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js">
 
     // Specify the configuration items and data for the chart
     option = {
+        tooltip: {
+            // trigger: 'axis',
+            // axisPointer: { type: 'cross' }
+        },
         legend: {
             type: 'scroll',
             // orient: 'vertical',
@@ -41,6 +45,7 @@ https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js">
         yAxis: {
             type: 'value'
         },
+
         series: [
             {
                 data: [{{ range .Humidity }}{{ . }},{{ end }}],
