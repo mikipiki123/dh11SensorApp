@@ -4,7 +4,7 @@ import "log"
 
 func main() {
 
-	err := portI2C()
+	err := portUsb()
 	if err != nil {
 		log.Println(err)
 	}
