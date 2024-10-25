@@ -31,7 +31,7 @@ func (self *Database) save_measurements(humidity int, temperature int) error {
 }
 
 func (self *Database) start() (e error) {
-	if db, err := sql.Open("sqlite3", "sensor.db"); err == nil {
+	if db, err := sql.Open("sqlite3", "../../dbNew/sensor.db"); err == nil {
 		self.db = db
 		println("Database opened")
 	} else {

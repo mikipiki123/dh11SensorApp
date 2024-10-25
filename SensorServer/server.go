@@ -81,6 +81,7 @@ func graph(w http.ResponseWriter, r *http.Request) {
 
 func dbPage(w http.ResponseWriter, r *http.Request) {
 
+	println("new Client")
 	measureArray := getDataArray()
 
 	tmpl, err := template.ParseFiles("DB.html")
