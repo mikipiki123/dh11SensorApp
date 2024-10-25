@@ -67,7 +67,7 @@ func graph(w http.ResponseWriter, r *http.Request) {
 	newData := data{Time: make([]string, len(measureArray)), Humidity: make([]int, len(measureArray)), Temperature: make([]int, len(measureArray))}
 
 	for i := 0; i < len(measureArray); i++ {
-		newData.Time[i] = measureArray[i].Time.Format(time.TimeOnly)
+		newData.Time[i] = measureArray[i].Time.Format(time.DateTime)
 		newData.Humidity[i] = measureArray[i].Humidity
 		newData.Temperature[i] = measureArray[i].Temperature
 	}

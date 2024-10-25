@@ -13,7 +13,7 @@ import (
 	"time"
 )
 
-const url = "http://Mikis-MBP.lan:8080/post"
+const url = "http://MacBookPro.lan:8080/post"
 
 type measurement struct {
 	Humidity    int `json:"humidity"`
@@ -72,7 +72,7 @@ func portI2C() error {
 		}
 
 		fmt.Println("2")
-		if addresses, err := net.LookupHost("Mikis-MBP.lan"); err != nil {
+		if addresses, err := net.LookupHost("MacBookPro.lan"); err != nil {
 			log.Println(err)
 			continue
 		} else {
